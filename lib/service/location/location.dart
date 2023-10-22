@@ -1,6 +1,9 @@
+import 'dart:async';
+import 'package:combine_proj/flow/home_page/modal/current_loc_data_modal.dart';
+import 'package:combine_proj/service/firestore/firestore.dart';
 import 'package:combine_proj/service/firestore/markers_loc_repo.dart';
-import 'package:combine_proj/utils/colors/colors.dart';
-import 'package:combine_proj/utils/constants/value_constants.dart';
+import 'package:combine_proj/utilities/colors/colors.dart';
+import 'package:combine_proj/utilities/constants/value_constants.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
@@ -15,14 +18,20 @@ class UserLocation {
 
   static final Location _location = Location();
 
+  // Update location periodicly
+
+  static Future<void> updateLocation(CurrentLocData currentLocData) async {
+    await FirestoreService.updateLocation(currentLocData);
+  }
+
   // Current LatLng
-  static Future<LatLng> curentLatLng() async {
+  static Future<void> curentLatLng() async {
     PermissionStatus status = await _location.hasPermission();
     if (status == PermissionStatus.denied) {
       await _location.requestPermission();
     }
     LocationData locationData = await _location.getLocation();
-    return LatLng(locationData.latitude!, locationData.longitude!);
+    currentLatLng = LatLng(locationData.latitude!, locationData.longitude!);
   }
 
   // Location marker
@@ -43,7 +52,7 @@ class UserLocation {
             fillColor: AppColors.googleMapCircleColor,
             radius: ValueContants.mapCircleRadius,
             strokeColor: AppColors.blackColor,
-            strokeWidth: ValueContants.mapCircleStroke,
+            strokeWidth: ValueContants.value1.toInt(),
             circleId: CircleId(loc.markerId),
             center: loc.markerLocation))
         .toSet();

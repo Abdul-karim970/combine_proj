@@ -1,4 +1,4 @@
-import 'package:combine_proj/utils/screen_size/screen_size.dart';
+import 'package:combine_proj/utilities/screen_size/screen_size.dart';
 import 'package:flutter/widgets.dart';
 
 // Vertical spacing

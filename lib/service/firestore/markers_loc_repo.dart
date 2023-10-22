@@ -1,9 +1,11 @@
 import 'package:combine_proj/flow/home_page/modal/markers_modal.dart';
+import 'package:combine_proj/service/location/location.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class GoogleMapRepo {
   GoogleMapRepo._();
   static List<MarkersModal> locList = [
+    MarkersModal(markerId: 'Current Location', markerLocation: currentLatLng!),
     MarkersModal(
         markerId: 'Home', markerLocation: const LatLng(29.394859, 71.704117)),
     MarkersModal(

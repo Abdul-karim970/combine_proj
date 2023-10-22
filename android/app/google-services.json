@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "525402002462",
+    "project_id": "combine-proj",
+    "storage_bucket": "combine-proj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525402002462:android:13c85f10cf4eebe715ca0f",
+        "android_client_info": {
+          "package_name": "com.example.combine_proj"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2rv3-XBZIxTACwJTACATVnOuyrBuHGuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

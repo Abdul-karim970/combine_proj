@@ -1,5 +1,5 @@
 import 'package:combine_proj/service/location/location.dart';
-import 'package:combine_proj/utils/screen_size/screen_size.dart';
+import 'package:combine_proj/utilities/screen_size/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 

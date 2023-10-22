@@ -1,4 +1,4 @@
-import 'package:combine_proj/utils/colors/colors.dart';
+import 'package:combine_proj/utilities/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class PracAppBar extends AppBar {
